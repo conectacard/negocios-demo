@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://altpro22.github.io/Jean-Luis-David/" />
+    <meta property="og:title" content="Jean Louis David México | Magazine Edition" />
+    <meta property="og:description" content="Descubre la vanguardia en estilismo y exclusividad. Agenda tu cita en nuestra edición de revista digital." />
+    
+    <meta property="og:image" content="https://altpro22.github.io/Jean-Luis-David/assets/brand/og_jean.jpg?v=1.1" />
+    <meta property="og:image:secure_url" content="https://altpro22.github.io/Jean-Luis-David/assets/brand/og_jean.jpg?v=1.1" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <title>NOMBRE DE TU EMPRESA | CONECTA CARD</title>
+    
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button id="btn-audio-control" class="audio-toggle" onclick="toggleAudioGlobal()">
+        <i id="audio-icon" class="fas fa-volume-up"></i>
+    </button>
+
+    <section id="portada-hub" class="main-hub">
+        <header class="magazine-header">
+            <div class="header-title-container">
+                <h1 class="agency-name">NOMBRE DE TU EMPRESA</h1>
+                <div class="download-track-container">
+                    <p class="download-text">Descarga nuestra canción / Download our song</p>
+                    <a href="assets/sounds/spot-intro.mp3" download="spot-intro.mp3" class="btn-download-audio" onclick="playClickSound()">
+                        <i class="fas fa-download"></i> DESCARGAR / DOWNLOAD
+                    </a>
+                </div>
+            </div>
+            <img src="assets/brand/logo-mini.png" alt="Logo" class="agency-logo">
+        </header>
+
+        <div class="mosaic-grid">
+            <div class="mosaic-item hero-block" onclick="openProfileZoom()">
+                <img id="profile-pic-img" src="assets/hero/main-photo.jpg" alt="Mona Lisa">
+                <div class="hero-overlay">
+                    <span class="edition-label">CONECTA CARD</span>
+                    <h2 class="hero-title">NOMBRE DE TU EMPRESA</h2>
+                </div>
+            </div>
+
+            <div class="mosaic-item video-block" onclick="openYouTubeVideo()">
+                <div class="video-preview" id="yt-iframe-container">
+                    <img src="assets/hero/video-thumb.jpg" alt="Video" id="yt-thumb-img">
+                    <div class="yt-play-mini" id="yt-play-icon"><i class="fab fa-youtube"></i></div>
+                </div>
+                <span class="block-label">DA CLIC AL VIDEO / CLICK TO PLAY</span>
+            </div>
+
+            <div class="mosaic-item lead-block">
+                <button class="btn-shiny-gold shine-effect" onclick="openTransactionModal()">
+                    AGENDA / COMPRA / COTIZA AQUÍ
+                </button>
+            </div>
+
+            <div class="mosaic-item share-block">
+                <button class="btn-magazine-share" onclick="shareExperienceRobust()">
+                    <i class="fas fa-share-alt"></i> RECOMIÉNDANOS Y COMPARTE / SHARE
+                </button>
+            </div>
+
+            <div class="mosaic-item menu-block">
+                <div class="magazine-menu-grid">
+                    <button class="mag-btn" onclick="showAppContent('cat1')">
+                        <span class="num">01</span> CONÓCENOS
+                    </button>
+                    <button class="mag-btn" onclick="showAppContent('cat2')">
+                        <span class="num">02</span> SERVICIOS
+                    </button>
+                    <button class="mag-btn" onclick="showAppContent('cat3')">
+                        <span class="num">03</span> TESTIMONIOS
+                    </button>
+                    <button class="mag-btn" onclick="showAppContent('cat4')">
+                        <span class="num">04</span> CONTACTO
+                    </button>
+                </div>
+            </div>
+
+            <div class="mosaic-item viral-gamification-block">
+                <div class="viral-card-container">
+                    <h4 class="viral-title">comparte con amigos y obtén descuentos vip</h4>
+                    <div id="viral-lock-overlay" class="viral-locked">
+                        <i class="fas fa-lock"></i>
+                        <span id="viral-counter-label">COMPARTIDOS / SHARED: 0 / 5</span>
+                    </div>
+                    <button class="btn-viral-share" onclick="executeViralShare()">
+                        <i class="fab fa-whatsapp"></i> COMPARTIR PARA DESBLOQUEAR / SHARE TO UNLOCK
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mosaic-item custom-actions-block">
+                <button class="btn-custom-action btn-recommended-businesses" onclick="openBrandModal('modal-negocios')">
+                    NEGOCIOS RECOMENDADOS
+                </button>
+                <button class="btn-custom-action btn-vip-promotions" onclick="openBrandModal('modal-promociones')">
+                    PROMOCIONES PARA CLIENTES VIP
+                </button>
+                
+                <div class="credits-altpro-compact">
+                    <span class="produced-by">PRODUCED BY CONECTA CARD</span>
+                    <a href="https://wa.me/524491472336" target="_blank" class="altpro-link">
+                        <i class="fab fa-whatsapp"></i> 449 147 2336
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal-negocios" class="overlay-modal brand-custom-modal" style="display: none;" onclick="closeBrandModal('modal-negocios')">
+        <button class="btn-close-circular" onclick="closeBrandModal('modal-negocios')">×</button>
+        <div class="network-scroll-box" onclick="event.stopPropagation()">
+            <h3 class="network-modal-title"><i class="fas fa-handshake"></i> NEGOCIOS RECOMENDADOS</h3>
+            <p class="network-modal-subtitle">Visita las CARD oficiales de nuestros aliados comerciales / Partners network</p>
+            <div class="network-buttons-grid">
+                <button class="btn-network-link" onclick="openNetworkCard('https://altpro22.github.io/old-station-band/')"><i class="fas fa-store"></i> NEGOCIO 1</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://altpro22.github.io/old-station-band/')"><i class="fas fa-store"></i> NEGOCIO 2</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://altpro22.github.io/old-station-band/')"><i class="fas fa-store"></i> NEGOCIO 3</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://altpro22.github.io/old-station-band/')"><i class="fas fa-store"></i> NEGOCIO 4</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://altpro22.github.io/old-station-band/')"><i class="fas fa-store"></i> NEGOCIO 5</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://altpro22.github.io/old-station-band/')"><i class="fas fa-store"></i> NEGOCIO 6</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://altpro22.github.io/old-station-band/')"><i class="fas fa-store"></i> NEGOCIO 7</button>
+                <button class="btn-network-link" onclick="openNetworkCard('https://altpro22.github.io/old-station-band/')"><i class="fas fa-store"></i> NEGOCIO 8</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-promociones" class="overlay-modal brand-custom-modal" style="display: none;" onclick="closeBrandModal('modal-promociones')">
+        <button class="btn-close-circular" onclick="closeBrandModal('modal-promociones')">×</button>
+        <div class="network-scroll-box" onclick="event.stopPropagation()">
+            <h3 class="network-modal-title"><i class="fas fa-gem"></i> DESCUENTOS Y CLUB VIP</h3>
+            <p class="network-modal-subtitle">Desbloquea beneficios en nuestra red compartiendo la CARD</p>
+            
+            <div class="tier-accordion-container">
+                <div class="tier-card-box">
+                    <div class="tier-header-bar">
+                        <span class="tier-badge"><i class="fas fa-users"></i> META: 10 AMIGOS</span>
+                        <span class="tier-status-lock" id="status-lock-10"><i class="fas fa-lock"></i> BLOQUEADO</span>
+                    </div>
+                    <div class="tier-content-benefits">
+                        <h4 class="benefit-item-headline">NOMBRE DE TU EMPRESA</h4>
+                        <p class="benefit-item-desc">• 15% de descuento en estos servicios</p>
+                        <h4 class="benefit-item-headline">RED DE PYMES RECOMENDADAS</h4>
+                        <p class="benefit-item-desc">• Negocio 1 a 4: 10% de descuento directo en consumo presentando tu ticket digital verificado.</p>
+                    </div>
+                </div>
+
+                <div class="tier-card-box">
+                    <div class="tier-header-bar">
+                        <span class="tier-badge-premium"><i class="fas fa-crown"></i> META: 20 AMIGOS</span>
+                        <span class="tier-status-lock" id="status-lock-20"><i class="fas fa-lock"></i> BLOQUEADO</span>
+                    </div>
+                    <div class="tier-content-benefits">
+                        <h4 class="benefit-item-headline">JEAN LOUIS DAVID</h4>
+                        <p class="benefit-item-desc">• Promoción especial para 20 amigos contactados</p>
+                        <h4 class="benefit-item-headline">RED DE PYMES RECOMENDADAS</h4>
+                        <p class="benefit-item-desc">• Red Total (Negocio 1 al 8): Bonificación preferencial del 20% o producto de cortesía de bienvenida.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-transaccional" class="overlay-modal business-form-overlay" style="display: none;">
+        <button class="btn-close-circular" onclick="closeTransactionModal()">×</button>
+        <div class="form-scroll-wrapper" onclick="event.stopPropagation()">
+            
+            <div class="form-selector-tabs">
+                <button id="tab-citas" class="tab-selector-btn active" onclick="switchBusinessForm('citas')">CITAS / RESERVATIONS</button>
+                <button id="tab-ventas" class="tab-selector-btn" onclick="switchBusinessForm('ventas')">PEDIDOS / SHOP</button>
+                <button id="tab-cotizar" class="tab-selector-btn" onclick="switchBusinessForm('cotizar')">COTIZAR / ESTIMATE</button>
+            </div>
+
+<form id="form-case-citas" class="business-dynamic-form" onsubmit="processTransactionForm(event, 'citas')">
+    <h3 class="form-section-title">RESERVACIÓN DE CITA / BOOK APPOINTMENT</h3>
+    
+    <!-- NUEVO BOTÓN DE TU AGENDA CALENDLY -->
+    <a href="https://calendly.com/altpromex/30min" target="_blank" style="display: block; text-align: center; width: 100%; margin-bottom: 20px; padding: 12px; background-color: #006bff; color: white; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; box-sizing: border-box;">
+        <i class="fas fa-calendar-alt"></i> AGENDAR CITA AQUÍ / BOOK NOW
+    </a>
+
+    <div class="input-group-parallel"><label>Nombre Completo / Full Name *</label><input type="text" id="cita-nombre" required placeholder="Ej. Jane Doe"></div>
+    <div class="input-group-parallel"><label>WhatsApp (10 dígitos) *</label><input type="tel" id="cita-whatsapp" pattern="[0-9]{10}" required placeholder="Ej. 5512345678"></div>
+    <div class="input-group-parallel">
+        <label>Servicio Requerido / Service *</label>
+        <select id="cita-servicio" required>
+            <option value="Corte Vanguardia (Mona Lisa) | $500">Corte Vanguardia (Mona Lisa) ($500 MXN)</option>
+            <option value="Colorimetría Avanzada | $1200">Colorimetría Avanzada ($1200 MXN)</option>
+            <option value="Tratamiento Reconstrucción VIP | $800">Tratamiento Reconstrucción VIP ($800 MXN)</option>
+            <option value="Peinado Evento de Alto Nivel | $600">Peinado Evento de Alto Nivel ($600 MXN)</option>
+        </select>
+    </div>
+    <div class="input-group-parallel"><label>Fecha de la Cita / Date *</label><input type="date" id="cita-fecha" required></div>
+    <div class="input-group-parallel">
+        <label>Horario Disponible / Time *</label>
+        <select id="cita-horario" required>
+            <option value="09:00 AM">09:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="01:00 PM">01:00 PM</option>
+            <option value="04:00 PM">04:00 PM</option>
+            <option value="06:00 PM">06:00 PM</option>
+        </select>
+    </div>
+    <div class="deposit-box-container">
+        <p class="deposit-notice">Para asegurar su espacio, se requiere un anticipo de garantía. El saldo se paga en sucursal. / Deposit required.</p>
+        <button type="button" class="btn-payment-gateway" onclick="triggerGatewayDeposit('citas', 200)">
+            <i class="fas fa-credit-card"></i> ENVIAR TICKET DE ANTICIPO
+        </button>
+    </div>
+</form>
+
+            <form id="form-case-ventas" class="business-dynamic-form" style="display:none;" onsubmit="processTransactionForm(event, 'ventas')">
+    <h3 class="form-section-title">CATÁLOGO Y PEDIDOS / SHOP PRODUCTS</h3>
+    
+    <button type="button" onclick="validarVentaWhatsApp()" style="width: 100%; margin-bottom: 20px; padding: 12px; background-color: #25d366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
+        <i class="fab fa-whatsapp"></i> VALIDAR DISPONIBILIDAD / CHECK AVAILABILITY
+    </button>
+
+    <div class="shop-interactive-catalog">
+        <div class="catalog-item-row">
+            <label class="catalog-check-label"><input type="checkbox" class="prod-item-check" value="Shampoo Premium JLD" data-price="450" onchange="calculateShopTotal()"><span>Shampoo Premium JLD ($450)</span></label>
+            <input type="number" class="prod-item-qty" value="1" min="1" max="10" onchange="calculateShopTotal()">
+        </div>
+        <div class="catalog-item-row">
+            <label class="catalog-check-label"><input type="checkbox" class="prod-item-check" value="Mascarilla Reconstructora" data-price="600" onchange="calculateShopTotal()"><span>Mascarilla Reconstructora ($600)</span></label>
+            <input type="number" class="prod-item-qty" value="1" min="1" max="10" onchange="calculateShopTotal()">
+        </div>
+        <div class="catalog-item-row">
+            <label class="catalog-check-label"><input type="checkbox" class="prod-item-check" value="Sérum de Brillo Extremo" data-price="380" onchange="calculateShopTotal()"><span>Sérum de Brillo Extremo ($380)</span></label>
+            <input type="number" class="prod-item-qty" value="1" min="1" max="10" onchange="calculateShopTotal()">
+        </div>
+    </div>
+    <div class="input-group-parallel"><label>Nombre del Comprador / Name *</label><input type="text" id="venta-nombre" required placeholder="Ej. Jane Doe"></div>
+    <div class="input-group-parallel"><label>Teléfono de Contacto / Phone *</label><input type="tel" id="venta-telefono" pattern="[0-9]{10}" required placeholder="Ej. 5512345678"></div>
+    <div class="input-group-parallel"><label>Dirección de Entrega / Shipping Address *</label><input type="text" id="venta-direccion" required placeholder="Calle, Número, Colonia, Delegación"></div>
+    <div class="input-group-parallel">
+        <label>Zona de Envío / Flete *</label>
+        <select id="venta-flete" required onchange="calculateShopTotal()">
+            <option value="Zona Centro Polanco | 0">Recoger en Mostrador (+ $0 MXN)</option>
+            <option value="Zona Norte CDMX | 90">Zona Norte CDMX (+ $90 MXN)</option>
+            <option value="Zona Sur CDMX | 120">Zona Sur CDMX (+ $120 MXN)</option>
+            <option value="Zona Poniente CDMX | 80">Zona Poniente CDMX (+ $80 MXN)</option>
+        </select>
+    </div>
+    <div class="realtime-math-breakdown">
+        <p>Subtotal: $<span id="math-subtotal">0</span> MXN</p>
+        <p>Envío / Delivery: $<span id="math-envio">0</span> MXN</p>
+        <h4 class="math-total-neto">TOTAL: $<span id="math-total">0</span> MXN</h4>
+    </div>
+    <div class="deposit-box-container">
+        <button type="button" class="btn-payment-gateway" onclick="triggerGatewayDeposit('ventas', null)">
+            <i class="fas fa-wallet"></i> ENVIAR TICKET DE PAGO
+        </button>
+    </div>
+</form>
+
+            <form id="form-case-cotizar" class="business-dynamic-form" style="display:none;" onsubmit="enviarCotizacionWhatsApp(event)">
+    <h3 class="form-section-title">SOLICITUD DE COTIZACIÓN / ESTIMATE</h3>
+    <div class="input-group-parallel"><label>Nombre del Solicitante / Name *</label><input type="text" id="cotizar-nombre" required placeholder="Ej. Jane Doe"></div>
+    <div class="input-group-parallel"><label>WhatsApp de Contacto / Phone *</label><input type="tel" id="cotizar-whatsapp" pattern="[0-9]{10}" required placeholder="Ej. 5512345678"></div>
+    <div class="input-group-parallel">
+        <label>Categoría del Servicio / Category *</label>
+        <select id="cotizar-categoria" required>
+            <option value="Cambio de Imagen Completo">Cambio de Imagen Completo</option>
+            <option value="Colorimetría y Diseño de Novias">Colorimetría y Diseño de Novias</option>
+            <option value="Tratamiento Capilar Químico Especializado">Tratamiento Capilar Químico Especializado</option>
+            <option value="Producción para Pasarela / Editorial">Producción para Pasarela / Editorial</option>
+        </select>
+    </div>
+    <div class="input-group-parallel"><label>Especificaciones / Detailed Specifications *</label><textarea id="cotizar-detalles" rows="3" required placeholder="Describa a detalle lo que requiere..."></textarea></div>
+    
+    <div class="input-group-parallel">
+        <label>Carga de Evidencia Visual (Opcional) / Upload Photos (Optional)</label>
+        <input type="file" id="cotizar-evidencia" accept="image/*" class="custom-file-input">
+        <p class="file-hint">Suba una foto clara de su estado capilar actual si lo desea. / Optional photo upload.</p>
+    </div>
+
+    <button type="submit" style="width: 100%; margin-top: 20px; padding: 15px; background-color: #25d366; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; font-size: 16px;">
+        <i class="fab fa-whatsapp"></i> ENVIARME COTIZACIÓN POR WHATSAPP
+    </button>
+</form>
+
+        </div>
+    </div>
+
+    <div id="modal-ticket-recibo" class="overlay-modal receipts-uber-overlay" style="display: none;">
+        <div class="uber-ticket-box" onclick="event.stopPropagation()">
+            <div class="ticket-header-logo">
+                <img src="assets/brand/logo-mini.png" alt="Mini Logo">
+                <h4>COMPROBANTE DIGITAL / DIGITAL RECEIPT</h4>
+            </div>
+            <hr class="ticket-dashed-line">
+            <div id="ticket-dynamic-content" class="ticket-mono-text"></div>
+            <hr class="ticket-dashed-line">
+            <button class="btn-send-whatsapp-dispatch" onclick="dispatchTicketToWhatsApp()">
+                <i class="fab fa-whatsapp"></i> CONFIRMAR Y ENVIAR AL NEGOCIO
+            </button>
+        </div>
+    </div>
+
+    <main id="dynamic-content-layer" class="content-overlay" style="display: none;">
+        <button class="btn-close-circular" onclick="closeAppContent()">×</button>
+        <section class="tab-pane" id="cat1-pane" style="display: none;"><h2 class="pane-title"></h2><div id="grid-cat1" class="polaroid-zigzag-grid"></div></section>
+        <section class="tab-pane" id="cat2-pane" style="display: none;"><h2 class="pane-title"></h2><div id="grid-cat2" class="polaroid-zigzag-grid"></div></section>
+        <section class="tab-pane" id="cat3-pane" style="display: none;"><h2 class="pane-title"></h2><div id="grid-cat3" class="polaroid-zigzag-grid"></div></section>
+        <section class="tab-pane" id="cat4-pane" style="display: none;">
+            <h2 class="pane-title">CONTACTO</h2>
+            <div class="contact-panel-robust">
+                <p class="address-tag"><i class="fas fa-map-pin"></i> Aquí tu domicilio</p>
+                <p class="address-tag"><i class="fas fa-phone"></i> Aqui tu Número de teléfonologo-mini</p>
+                
+                <div class="social-vertical-stack">
+                    <a id="link-web-direct" href="#" target="_blank" class="stack-btn web-color"><i class="fas fa-globe"></i> SITIO WEB / WEBSITE</a>
+                    <a id="link-wa-additional" href="#" target="_blank" class="stack-btn wa-add-color"><i class="fab fa-whatsapp"></i> WHATSAPP ADICIONAL</a>
+                    <a id="link-fb-direct" href="#" target="_blank" class="stack-btn fb-color"><i class="fab fa-facebook"></i> FACEBOOK</a>
+                    <a id="link-maps-direct" href="#" target="_blank" class="stack-btn maps-color"><i class="fas fa-location-dot"></i> CÓMO LLEGAR</a>
+                    <a id="link-ig-direct" href="#" target="_blank" class="stack-btn ig-color"><i class="fab fa-instagram"></i> INSTAGRAM</a>
+                </div>
+
+                <div class="qr-reubicado-container">
+                    <h4 class="qr-section-heading">QR DE MOSTRADOR / LOCAL STICKER</h4>
+                    <img src="assets/hero/qr.png" alt="QR Local" class="qr-embedded-img">
+                    <a href="assets/hero/qr.png" download="qr.png" class="btn-download-qr-integrated" onclick="playClickSound()">
+                        <i class="fas fa-cloud-download-alt"></i> DESCARGAR QR PARA IMPRIMIR
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="overlay-modal" style="display: none;" onclick="closeLightbox()">
+        <button class="btn-close-circular" onclick="closeLightbox()">×</button>
+        <div class="zoom-premium-content" onclick="event.stopPropagation()">
+            <button class="btn-nav-lightbox btn-prev" onclick="changeLightboxImage(-1)"><i class="fas fa-chevron-left"></i></button>
+            <div class="zoom-image-wrapper">
+                <img id="lightbox-image" src="" alt="Zoom">
+                <img src="assets/brand/logo-mini.png" class="mini-logo-zoom-overlay">
+            </div>
+            <button class="btn-nav-lightbox btn-next" onclick="changeLightboxImage(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <div id="text-zoom-modal" class="overlay-modal" style="display: none;" onclick="closeTextZoom()">
+        <div class="text-zoom-card" onclick="event.stopPropagation()">
+            <button class="btn-close-circular" style="top:-20px; right:-20px;" onclick="closeTextZoom()">×</button>
+            <div class="card-branding-header" style="display: flex; align-items: center;">
+                <img src="assets/brand/logo-mini.png" class="card-logo" style="width: 40px; margin-right: 10px;">
+                <h3 id="text-zoom-title"></h3>
+            </div>
+            <hr class="gold-divider" style="border: 0; border-top: 1px solid #d4af37; margin: 15px 0;">
+            <div id="text-zoom-content" style="white-space: pre-line;"></div>
+        </div>
+    </div>qr-code.png
+
+    <audio id="spot-intro" src="assets/sounds/spot-intro.mp3" preload="auto" loop></audio>
+    <audio id="sndFxClick" src="assets/sounds/clic.mp3"></audio>
+    <audio id="sndFxAcierto" src="assets/sounds/acierto.mp3" preload="auto"></audio>
+    <audio id="sndFxError" src="assets/sounds/error.mp3" preload="auto"></audio>
+    <audio id="sndFxEmpate" src="assets/sounds/empate.mp3" preload="auto"></audio>
+
+    <div id="video-lightbox-overlay" class="overlay-modal" style="display:none;" onclick="closeVideoLightbox()">
+        <button class="btn-close-circular" onclick="closeVideoLightbox()">×</button>
+        <div class="zoom-premium-content" onclick="event.stopPropagation()">
+            <div class="zoom-image-wrapper" style="width: 90%; max-width: 600px;">
+                <iframe id="video-lightbox-frame" style="width: 100%; aspect-ratio: 16/9; border: 3px solid var(--brand-accent); border-radius: 10px;" src="" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
+
+<div id="video-lightbox-overlay" class="video-lightbox-overlay">
+    <div class="video-lightbox-container">
+        <button class="btn-close-video" onclick="closeVideoLightbox()">X</button>
+        <iframe id="video-lightbox-frame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+</div>
